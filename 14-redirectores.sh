@@ -33,9 +33,17 @@ then
 
 fi
 
+USAGE(){
+   echo "Usage : : sudo sh 14-redirectores.sh package 1 package 2 ...."
 
+}
 
 VALIDATE $?
+
+if [ $# -eq 0 ]
+then
+   USAGE
+fi   
        
 
 for package in $@
