@@ -3,6 +3,6 @@
 DATE=$(date)
 USAGE=$(free -m)
 
-echo "Today's date is: $DATE
+echo "Today's date is: $DATE"
 
-echo "The usage staticks are : $USAGE
+echo "The usage staticks are : $USAGE"
