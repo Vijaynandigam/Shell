@@ -40,5 +40,5 @@ then
    fi
 
 else 
-   echo" MYSQL is already installed nothing to do..."
+   echo "MYSQL is already installed nothing to do..."
 fi          
