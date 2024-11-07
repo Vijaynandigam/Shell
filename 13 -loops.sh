@@ -26,32 +26,17 @@ fi
 dnf list installed git
 
 VALIDATE $?
-
-if [ $? -ne 0 ]
-then
-  echo "git is not installed and going to install it..."
-  dnf install git -y
-  VALIDATE $? "Installing git"
-
-else
-  echo "Git is already installed nothing to do...."
-fi   
-
-
-dnf list installed mysql
-
-if [ $? -ne 0 ]
-then
-   echo " MYSQL is not installed......and going to install"
-   dnf install mysql -y
-   VALIDATE $? "Installing mySQL"
-
-else 
-   echo "MYSQL is already installed nothing to do..."
-fi          
+       
 
 for package in $@
 do
-  echo $package
-
+   dnf list installed $package
+   if [ $? -ne 0 ]
+   then
+     echo "$package is not installed, going to installit.."
+     dnf install $package -y
+     VALIDATE $? "Installing package"
+   else
+     echo "  $package is already installed nothing to do"
+   fi  
 done
